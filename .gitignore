@@ -1,0 +1,8 @@
+bin
+debug
+.vs/
+packages/
+obj
+.userxs
+local.settings.json
+Eudic2Readwise/Properties/PublishProfiles/

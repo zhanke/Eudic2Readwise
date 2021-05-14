@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "7c5e584b-782e-469b-b238-c10c527edf68",
+		"name": "Eudic2Readwise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Azure Function",
+			"item": [
+				{
+					"name": "Trigger Azure Function Manaully",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-functions-key",
+								"value": "{{Azure Function Master Key}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"input\": \"test\" }"
+						},
+						"url": {
+							"raw": "https://{{Azure Function Hostname}}/admin/functions/Eudic2Readwise",
+							"protocol": "https",
+							"host": [
+								"{{Azure Function Hostname}}"
+							],
+							"path": [
+								"admin",
+								"functions",
+								"Eudic2Readwise"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Readwise",
+			"item": [
+				{
+					"name": "Add Highlights",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{Readwise API Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"highlights\":[\n        {\"text\":\"test1\"},\n        {\"text\":\"test2\"}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{Readwise API Hostname}}/api/v2/highlights/",
+							"protocol": "https",
+							"host": [
+								"{{Readwise API Hostname}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"highlights",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Eudic",
+			"item": [
+				{
+					"name": "Get 生词本",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"Eudic Category ID\", pm.response.json().data[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Eudic API Key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{Eudic API Hostname}}/api/open/v1/studylist/category?language=en",
+							"protocol": "https",
+							"host": [
+								"{{Eudic API Hostname}}"
+							],
+							"path": [
+								"api",
+								"open",
+								"v1",
+								"studylist",
+								"category"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get 单词 of 生词本",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Eudic API Key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{Eudic API Hostname}}/api/open/v1/studylist/words/0?language=en&category_id={{Eudic Category ID}}&page=0&page_size=1000",
+							"protocol": "https",
+							"host": [
+								"{{Eudic API Hostname}}"
+							],
+							"path": [
+								"api",
+								"open",
+								"v1",
+								"studylist",
+								"words",
+								"0"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en"
+								},
+								{
+									"key": "category_id",
+									"value": "{{Eudic Category ID}}"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "page_size",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

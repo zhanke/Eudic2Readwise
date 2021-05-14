@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eudic2Readwise", "Eudic2Readwise\Eudic2Readwise.csproj", "{9E79EE5B-066E-4FF9-B40E-10A057AF7001}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eudic2Readwise.Tests", "Eudic2Readwise.Tests\Eudic2Readwise.Tests.csproj", "{E353813F-5A83-4DB4-A164-EC5E36B94CD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F548546B-BE87-4548-A482-C099D8B9B2EA}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E79EE5B-066E-4FF9-B40E-10A057AF7001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E79EE5B-066E-4FF9-B40E-10A057AF7001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E79EE5B-066E-4FF9-B40E-10A057AF7001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E79EE5B-066E-4FF9-B40E-10A057AF7001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E353813F-5A83-4DB4-A164-EC5E36B94CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E353813F-5A83-4DB4-A164-EC5E36B94CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E353813F-5A83-4DB4-A164-EC5E36B94CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E353813F-5A83-4DB4-A164-EC5E36B94CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEFAB63E-1AF6-4D17-8C59-5532CD645500}
+	EndGlobalSection
+EndGlobal

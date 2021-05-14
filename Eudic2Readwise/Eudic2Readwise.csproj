@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+    <UserSecretsId>14000fad-ee14-4969-9fc6-911019a65ae9</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\ServiceDependencies\**" />
+    <EmbeddedResource Remove="Properties\ServiceDependencies\**" />
+    <None Remove="Properties\ServiceDependencies\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Properties\serviceDependencies.Eudic2Readwise20210515001343 - Zip Deploy.json" />
+    <None Remove="Properties\serviceDependencies.json" />
+    <None Remove="Properties\serviceDependencies.local.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.15.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.10" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json.example">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+</Project>

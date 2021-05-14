@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "EudicAPIKey": "NIS xxxxxxxxxxxxxx==",
+    "EudicDomain": "https://api.frdic.com",
+    "EudicRetrieveEndpointPath": "/api/open/v1/studylist/words/0?language=en&category_id=0&page=0&page_size=2000",
+    "ReadWiseAPIToken": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "ReadWiseDomain": "https://readwise.io",
+    "ReadWiseAddHighlightsEndpointPath": "/api/v2/highlights/",
+    "TimerSchedule": "0 30 9 * * 0" //Every Sunday at 9:30 AM
+  }
+}
